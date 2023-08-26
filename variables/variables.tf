@@ -56,6 +56,7 @@ default={
             fee=43000
             duration="6 months"
    }
+   Java=[ "Online", 20000, "3 months"]
    }
 }
 
@@ -70,4 +71,8 @@ value=var.list[2]
 
 output "course3"{
 value=var.map["Devops"]
+}
+
+output "course4"{
+value=var.map.Java
 }
