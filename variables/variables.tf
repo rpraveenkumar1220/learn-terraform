@@ -76,3 +76,10 @@ value=var.map["Devops"]
 output "course4"{
 value=var.map.Java[2]
 }
+
+
+variable "env"{}
+
+output "env"{
+value=var.env
+}
