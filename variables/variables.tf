@@ -9,5 +9,8 @@ default="Hello world"
 
 output "demo"{
 value=var.sample
+}
+
+output "demo1"{
 value=var.sample1
 }
