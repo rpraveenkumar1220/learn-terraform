@@ -23,6 +23,6 @@ output "demo2"{
 value=var.sample2
 }
 
-output "demo2"{
+output "demo3"{
 value="value of sample,sample1 & sample2 is - ${var.sample},${var.sample1}&${var.sample2}"
 }
