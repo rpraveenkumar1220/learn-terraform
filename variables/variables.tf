@@ -26,3 +26,48 @@ value=var.sample2
 output "demo3"{
 value="value of sample,sample1 & sample2 is - ${var.sample},${var.sample1}&${var.sample2}"
 }
+
+
+variable "plain"{
+default="Devops"
+}
+
+variable "list"{
+default={
+        "Devops"
+        "DataScience"
+         "AI"}
+}
+
+variable "map"
+default={
+   Devops={
+          "Online"
+           2000
+           "3 months"
+
+   }
+   DataScience={
+           "Offline"
+           30000
+           "2 months"
+   }
+   AI={
+            "Online"
+            43000
+            "6 months"
+   }
+}
+
+
+output "course1"{
+value=var.plain
+}
+
+output "course2"{
+value=var.list
+}
+
+output "course3"{
+value=var.map
+}
