@@ -34,8 +34,8 @@ default="Devops"
 
 variable "list"{
 default={
-        "Devops"
-        "DataScience"
+        "Devops",
+        "DataScience",
          "AI"}
 }
 
