@@ -39,24 +39,24 @@ default=[
          "AI"]
 }
 
-variable "map"
-default={
-   Devops={
-          "Online"
-           2000
+variable "map"{
+default=[
+   Devops=[
+          "Online",
+           2000,
            "3 months"
-
-   }
-   DataScience={
-           "Offline"
-           30000
+           ]
+   DataScience=[
+           "Offline",
+           30000,
            "2 months"
-   }
-   AI={
+   ]
+   AI=[
             "Online"
-            43000
+            43000,
             "6 months"
-   }
+   ]
+   ]
 }
 
 
