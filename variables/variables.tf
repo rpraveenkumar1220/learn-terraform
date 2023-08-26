@@ -40,23 +40,23 @@ default=[
 }
 
 variable "map"{
-default=[
-   "Devops=[
-          "Online",
-           2000,
-           "3 months"
-           ]",
-   "DataScience=[
-           "Offline",
-           30000,
-           "2 months"
-   ]",
-   "AI=[
-            "Online"
-            43000,
-            "6 months"
-   ]"
-   ]
+default={
+   Devops={
+         mode="Online"
+          fee=2000
+           duration="3 months"
+           }
+   DataScience={
+           mode="Offline"
+           fee=30000
+           duration="2 months"
+   }
+   AI={
+           mode="Online"
+            fee=43000
+            duration="6 months"
+   }
+   }
 }
 
 
