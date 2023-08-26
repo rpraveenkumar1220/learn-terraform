@@ -33,10 +33,10 @@ default="Devops"
 }
 
 variable "list"{
-default={
+default=[
         "Devops",
         "DataScience",
-         "AI"}
+         "AI"]
 }
 
 variable "map"
