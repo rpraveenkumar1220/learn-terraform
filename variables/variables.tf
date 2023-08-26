@@ -41,21 +41,21 @@ default=[
 
 variable "map"{
 default=[
-   Devops=[
+   "Devops=[
           "Online",
            2000,
            "3 months"
-           ]
-   DataScience=[
+           ]",
+   "DataScience=[
            "Offline",
            30000,
            "2 months"
-   ]
-   AI=[
+   ]",
+   "AI=[
             "Online"
             43000,
             "6 months"
-   ]
+   ]"
    ]
 }
 
