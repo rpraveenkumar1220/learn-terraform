@@ -79,11 +79,12 @@ value=var.map.Java[2]
 
 
 variable "env"{}
+variable "url"{}
 
 output "env"{
 value=var.env
 }
 
-variable "url"{
+output "url"{
 value=var.url
 }
