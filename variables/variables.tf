@@ -65,7 +65,7 @@ value=var.plain
 }
 
 output "course2"{
-value=var.list[1]
+value=var.list[2]
 }
 
 output "course3"{
