@@ -69,5 +69,5 @@ value=var.list[2]
 }
 
 output "course3"{
-value=var.map.DataScience.duration
+value=var.map
 }
