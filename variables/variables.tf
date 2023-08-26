@@ -69,5 +69,5 @@ value=var.list[2]
 }
 
 output "course3"{
-value=var.map
+value=var.map.Devops
 }
