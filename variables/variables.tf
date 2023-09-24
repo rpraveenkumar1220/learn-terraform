@@ -70,7 +70,7 @@ value=var.list[2]
 }
 
 output "course3"{
-value=var.map["Devops"]
+value=var.map.Devops
 }
 
 output "course4"{
