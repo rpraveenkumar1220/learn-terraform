@@ -70,7 +70,7 @@ value=var.list[2]
 }
 
 output "course3"{
-value=merge(var.map.Devops , var.map.java)
+value=merge(var.map.Devops , var.map.Java)
 }
 
 output "course4"{
