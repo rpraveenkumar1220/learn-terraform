@@ -1,5 +1,6 @@
 data "aws_instances" "test" {
-  instance_state_names = ["running", "stopped"]
+  instance_type = "t3.medium"
+  availabilty_zone = "us-east-1"
 }
 
 output "demo"{
