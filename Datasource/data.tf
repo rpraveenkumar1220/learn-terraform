@@ -1,6 +1,7 @@
 data "aws_instances" "test" {
-  instance_type = "t3.medium"
-  availabilty_zone = "us-east-1"
+  instance_tags = {
+    Name = "workstation"
+  }
 }
 
 output "demo"{
