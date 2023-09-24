@@ -43,8 +43,8 @@ variable "map"{
 default={
    Devops={
          mode="Online"
-          fee=2000
-           duration="3 months"
+         fee=2000
+         duration="3 months"
            }
    DataScience={
            mode="Offline"
