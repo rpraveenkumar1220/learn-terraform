@@ -8,5 +8,5 @@ data "aws_instances" "test" {
 }
 
 output "demo"{
-  value = count(data.aws_instances.test.instance_state_names)
+  value = length(data.aws_instances.test.instance_state_names)
 }
