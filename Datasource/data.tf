@@ -1,6 +1,6 @@
 data "aws_instances" "test" {
 
-  instance_state_names = ["stopped"]
+  instance_state = ["stopped"]
 
   instance_tags = {
     Name = "workstation"
@@ -8,5 +8,5 @@ data "aws_instances" "test" {
 }
 
 output "demo"{
-  value = length(data.aws_instances.test.instance_state_names)
+  value = length(data.aws_instances.test.instance_state)
 }
