@@ -33,5 +33,13 @@ data "aws_instances" "test1" {
    }
 
 output "demo2"{
-    value =merge(data.aws_instances.test1.public_ips, data.aws_instances.test1.private_ips, data.aws_instances.test1.instance_state_names, data.aws_instances.test1.id)
-  }
+    value = data.aws_instances.test1.public_ips
+}
+
+output "demo3"{
+  value = data.aws_instances.test1.private_ips
+}
+
+output "demo4"{
+  value = data.aws_instances.test1.instance_state_names
+}
