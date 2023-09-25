@@ -22,5 +22,5 @@ data "aws_ec2_instance_types" "test" {
 }
 
 output "demo1"{
-  value = data.aws_ec2_instance_types.test.instance_types
+  value = data.aws_ec2_instance_types.test.id
 }
