@@ -7,6 +7,7 @@ data "aws_ami" "instance" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.instance.id
   instance_type = "t3.micro"
+  vpc_security_group_ids = [ aws_security_group.SG.id]
 
   tags = {
     Name = "Test"
@@ -37,3 +38,5 @@ resource "aws_security_group" "SG" {
     Name = "allow_all"
   }
 }
+
+
