@@ -22,5 +22,16 @@ data "aws_ec2_instance_types" "test" {
 }
 
 output "demo1"{
-  value = data.aws_ec2_instance_types.test.provider
+  value = data.aws_ec2_instance_types.test.id
 }
+
+
+data "aws_instances" "test1" {
+  instance_tags = {
+    Name = "workstation"
+  }
+   }
+
+output "demo2"{
+    value =merge(data.aws_instances.test1.public_ips, data.aws_instances.test1.private_ips, data.aws_instances.test1.instance_state_names, data.aws_instances.test1.id)
+  }
