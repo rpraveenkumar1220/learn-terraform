@@ -11,3 +11,16 @@ data "aws_ec2_spot_price" "example" {
   output "demo"{
   value = data.aws_ec2_spot_price.example.spot_price
 }
+
+
+data "aws_ec2_instance_types" "test" {
+
+  filter {
+    name   = "instance-type"
+    values = ["t3.micro", "t3.small"]
+  }
+}
+
+output "demo1"{
+  value = data.aws_ec2_instance_types.test.instance_types
+}
