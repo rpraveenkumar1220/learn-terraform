@@ -1,6 +1,6 @@
 data "aws_ami" "instance" {
   most_recent = true
-  executable_users = ["self"]
+  executable_users = ["751367052640"]
   name_regex = "Centos-8-DevOps-Practice"
 }
 
