@@ -37,7 +37,7 @@ output "demo2"{
 }
 
 output "demo3"{
-  value = data.aws_instances.test1.private_ips
+  value = [ data.aws_instances.test1.private_ips , data.aws_instances.test1.public_ips ]
 }
 
 output "demo4"{
