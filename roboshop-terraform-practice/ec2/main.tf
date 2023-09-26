@@ -14,23 +14,19 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_instance" "example" {
-
-  connection {
-    type     = "ssh"
-    user     = "centos"
-    password = DevOps321
-    host     = self.public_ip
-  }
-
   provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "centos"
+      password = "DevOps321"
+      host     = self.public_ip
+    }
     inline = [
       "sudo labauto ansible",
       "ansible-pull -i localhost, -U https://github.com/rpraveenkumar1220/Roboshop-Ansible.git  roboshop.yml -e env=dev -e role_name=frontend"
     ]
   }
 }
-
 resource "aws_security_group" "SG" {
   name        = var.name
   description = "Allow TLS inbound traffic"
