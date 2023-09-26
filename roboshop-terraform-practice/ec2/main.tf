@@ -10,22 +10,36 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = [ aws_security_group.SG.id]
 
   tags = {
-    Name = "Test"
+    Name = var.name
   }
 }
 
+resource "aws_instance" "example" {
 
+  connection {
+    type     = "ssh"
+    user     = "centos"
+    password = DevOps321
+    host     = self.public_ip
+  }
 
+  provisioner "remote-exec" {
+    inline = [
+      "sudo labauto ansible",
+      "ansible-pull -i localhost, -U https://github.com/rpraveenkumar1220/Roboshop-Ansible.git  roboshop.yml -e env=dev -e role_name=frontend"
+    ]
+  }
+}
 
 resource "aws_security_group" "SG" {
-  name        = "Test_SG"
+  name        = var.name
   description = "Allow TLS inbound traffic"
 
   ingress {
-    description      = " SSH "
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
+
+    from_port        = 0
+    to_port          = 0
+    protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
 
   }
@@ -38,8 +52,9 @@ resource "aws_security_group" "SG" {
   }
 
   tags = {
-    Name = "allow_all"
+    Name = var.name
   }
 }
 
+variable "name"{}
 
