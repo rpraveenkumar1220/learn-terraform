@@ -24,11 +24,22 @@ resource "aws_instance" "web" {
 
     inline = [
       "sudo labauto ansible",
-      "ansible-pull -i localhost, -U https://github.com/rpraveenkumar1220/Roboshop-Ansible.git  roboshop.yml -e env=dev -e role_name=frontend"
+      "ansible-pull -i localhost, -U https://github.com/rpraveenkumar1220/Roboshop-Ansible.git  roboshop.yml -e env=dev -e role_name=${var.name}"
     ]
   }
 }
+resource "aws_route53_record" "dns" {
+  zone_id = data
+  name    = "www.example.com"
+  type    = "A"
+  ttl     = 300
+  records = [aws_eip.lb.public_ip]
+}
 
+data "aws_route53_zone" "example" {
+  name         = "devopskumar.site."
+  private_zone = true
+}
 
 resource "aws_security_group" "SG" {
   name        = var.name
