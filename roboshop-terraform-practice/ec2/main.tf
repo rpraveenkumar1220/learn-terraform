@@ -6,13 +6,17 @@ data "aws_ami" "instance" {
 
 resource "aws_instance" "web" {
   ami           = data.aws_ami.instance.id
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
   vpc_security_group_ids = [ aws_security_group.SG.id]
 
   tags = {
     Name = var.name
   }
 
+
+}
+resource "null_resource" "ansible" {
+  depends_on = [aws_instance.web, aws_route53_record.dns]
   provisioner "remote-exec" {
 
     connection {
@@ -28,18 +32,16 @@ resource "aws_instance" "web" {
     ]
   }
 }
+
 resource "aws_route53_record" "dns" {
-  zone_id = data
-  name    = "www.example.com"
+  zone_id = "Z0860624TQ63X2IAQS8P"
+  name    = "${var.name}-dev"
   type    = "A"
-  ttl     = 300
-  records = [aws_eip.lb.public_ip]
+  ttl     = 30
+  records = [aws_instance.web.private_ip]
 }
 
-data "aws_route53_zone" "example" {
-  name         = "devopskumar.site."
-  private_zone = true
-}
+
 
 resource "aws_security_group" "SG" {
   name        = var.name
