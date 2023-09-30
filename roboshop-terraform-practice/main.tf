@@ -6,16 +6,15 @@ module "instances"{
 
 variable "instances" {
   default = {
-    frontend{}
-  mongodb {}
-  catalogue {}
-  redis {}
-  cart {}
-  user {}
-  mysql {}
-  payment {}
-  rabbitmq {}
-  shipping {}
+    frontend={}
+  mongodb={}
+  catalogue={}
+  redis={}
+  cart={}
+  user={}
+  mysql={}
+  payment={}
+  rabbitmq={}
+  shipping={}
 }
   }
-}
