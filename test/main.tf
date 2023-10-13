@@ -10,8 +10,4 @@ vpc={
   }
 }
 
-variable "vpc" {}
 
-output "test" {
-  value = var.vpc["cidr_block"]
-}
