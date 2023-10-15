@@ -9,8 +9,4 @@ output "s2"{
   }
 }
 
-output "s3"{
-  value = {
-    subnets = var.vpc["subnets(public)"]
-  }
-}
+
