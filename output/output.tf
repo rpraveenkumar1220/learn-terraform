@@ -1,7 +1,4 @@
-output "sample"{
-value="Hello World"
+output "s1"{
+value = var.vpc["cidr_block"]
 }
 
-output "sample1"{
-value=1000
-}
