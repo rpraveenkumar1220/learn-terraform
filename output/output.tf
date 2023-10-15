@@ -4,5 +4,6 @@ value = var.vpc
 
 
 output "s2"{
-  value = element(var.vpc["subnets"])
+  count = lenght(var.vpc)
+  value = element(var.vpc["subnets"], count.index)
 }
