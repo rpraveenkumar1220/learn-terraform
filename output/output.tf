@@ -5,7 +5,7 @@ value = var.vpc
 
 output "s2"{
   value = {
-    subnets = var.vpc.main[cidr_block]
+    subnets = var.vpc.main
   }
 }
 
