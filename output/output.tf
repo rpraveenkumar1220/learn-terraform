@@ -4,5 +4,5 @@ value = var.vpc
 
 
 output "s2"{
-  value = var.subnets
+  value = var.vpc["subnets"]
 }
