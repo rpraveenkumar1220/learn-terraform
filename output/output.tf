@@ -8,3 +8,9 @@ output "s2"{
     subnets = var.vpc["subnets"]
   }
 }
+
+output "s2"{
+  value = {
+    subnets = var.vpc[subnets["public"]]
+  }
+}
